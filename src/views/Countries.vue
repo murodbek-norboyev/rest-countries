@@ -24,7 +24,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12" sm="4" lg="3" v-for="country in filteredCountries" :key="country.alpha3Code">
+      <v-col cols="12" sm="6" lg="3" v-for="country in filteredCountries" :key="country.alpha3Code">
         <CountryCard :countryData="country"/>
       </v-col>
     </v-row>
@@ -41,6 +41,7 @@ const selectedRegion = ref('');
 const searchTerm = ref('');
 const countries = computed(() => store.countries);
 const regions = computed(() => store.regions);
+
 onMounted(async () => {
   store.fetchCountries()
 });
